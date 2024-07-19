@@ -18,7 +18,7 @@ class CatalogueController extends Controller
      */
     public function index()
     {
-        $data = Catalogue::query()->latest('id')->paginate(5);
+        $data = Catalogue::query()->latest('id')->get();
         return view(self::PATH_VIEW . __FUNCTION__, compact('data'));
     }
 
@@ -75,9 +75,11 @@ class CatalogueController extends Controller
         if ($request->hasFile('cover')) {
             $data['cover'] = Storage::put(self::PATH_UPLOAD, $request->file('cover'));
         }
+        
         $currentCover = $model->cover;
         $model->update($data);
-        if($currentCover && Storage::exists($currentCover)){
+
+        if($request->hasFile('cover') && $currentCover && Storage::exists($currentCover)){
             Storage::delete($currentCover);
         }
         return back();

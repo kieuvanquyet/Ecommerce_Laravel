@@ -10,7 +10,7 @@ class Product extends Model
     use HasFactory;
 
     protected $fillable = [
-        'category_id',
+        'catalogue_id',
         'name',
         'slug',
         'sku',
@@ -29,11 +29,21 @@ class Product extends Model
         'is_show_home',
     ];
 
-    protected $casts =[
+    protected $casts = [
         'is_active' => 'boolean',
         'is_hot_deal' => 'boolean',
         'is_good_deal' => 'boolean',
         'is_new' => 'boolean',
         'is_show_home' => 'boolean',
     ];
+
+    public function catalogue()
+    {
+        return $this->belongsTo(Catalogue::class);
+    }
+
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class);
+    }
 }

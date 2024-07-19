@@ -20,3 +20,8 @@ use Illuminate\Support\Facades\Route;
 // });
 // Route::get('/', [CatalogueController::class,'index'])->name('admin.catalogues.index');
 
+// Route::get('/', function () {
+//     $products = \App\Models\Product::query()->latest('id')->limit(4)->get();
+
+//     return view('welcome', compact('products'));
+// })->name('welcome');
