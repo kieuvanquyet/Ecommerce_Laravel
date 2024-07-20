@@ -41,7 +41,7 @@
                                     <div class="mt-3">
                                         <label for="sku" class="form-label">SKU</label>
                                         <input type="text" class="form-control" name="sku" id="sku"
-                                               value="{{ strtoupper(\Str::random(8)) }}">
+                                               value="{{ strtoupper(Str::random(8)) }}">
                                     </div>
                                     <div class="mt-3">
                                         <label for="price_regular" class="form-label">Price Regular</label>
@@ -85,7 +85,7 @@
                                                     <input class="form-check-input" type="checkbox" role="switch"
                                                            name="{{ $key }}" value="1" id="{{ $key }}" @if($key == 'is_active') checked @endif>
                                                     <label class="form-check-label"
-                                                           for="{{ $key }}">{{ \Str::convertCase($key, MB_CASE_TITLE) }}</label>
+                                                           for="{{ $key }}">{{ Str::convertCase($key, MB_CASE_TITLE) }}</label>
                                                 </div>
                                             </div>
                                         @endforeach

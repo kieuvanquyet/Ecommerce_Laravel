@@ -19,7 +19,7 @@ return new class extends Migration
             $table->foreignIdFor(Product::class)->constrained();
             $table->foreignIdFor(ProductSize::class)->constrained();
             $table->foreignIdFor(ProductColor::class)->constrained();
-            $table->unsignedBigInteger('quatity')->default();
+            $table->unsignedBigInteger('quatity')->default(0);
             $table->string('image')->nullable();
             $table->timestamps();
 

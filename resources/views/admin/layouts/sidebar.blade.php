@@ -82,6 +82,15 @@
                         </ul>
                     </div>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="{{ url('/') }}" data-bs-toggle="collapse" role="button"
+                       aria-expanded="false" aria-controls="sidebarProduct">
+                        <i class="ri-layout-3-line"></i>
+                        <span data-key="t-layouts">Website</span>
+
+                    </a>
+                    
+                </li>
 
             </ul>
         </div>

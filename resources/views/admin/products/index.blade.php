@@ -66,8 +66,8 @@
                                     @php
                                         $url = $item->img_thumbnail;
 
-                                        if(! \Str::contains($url, 'http')) {
-                                            $url = \Illuminate\Support\Facades\Storage::url($url);
+                                        if(! Str::contains($url, 'http')) {
+                                            $url = Storage::url($url);
                                         }
                                     @endphp
 
