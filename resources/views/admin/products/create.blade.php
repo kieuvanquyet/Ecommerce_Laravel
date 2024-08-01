@@ -21,9 +21,26 @@
         </div>
     </div>
 
+    @if ($errors->any())
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header align-items-center d-flex">
+                        <div class="alert alert-danger" style="width: 100%;">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endif
+
     <form action="{{ route('admin.products.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
-
         <div class="row">
             <div class="col-lg-12">
                 <div class="card">
@@ -41,7 +58,7 @@
                                     <div class="mt-3">
                                         <label for="sku" class="form-label">SKU</label>
                                         <input type="text" class="form-control" name="sku" id="sku"
-                                               value="{{ strtoupper(Str::random(8)) }}">
+                                               value="{{ strtoupper(\Str::random(8)) }}">
                                     </div>
                                     <div class="mt-3">
                                         <label for="price_regular" class="form-label">Price Regular</label>
@@ -54,8 +71,8 @@
                                                id="price_sale">
                                     </div>
                                     <div class="mt-3">
-                                        <label for="catelogue_id" class="form-label">Catalogues</label>
-                                        <select type="text" class="form-select" name="catelogue_id" id="catelogue_id">
+                                        <label for="catalogue_id" class="form-label">Catalogues</label>
+                                        <select type="text" class="form-select" name="catalogue_id" id="catalogue_id">
                                             @foreach($catalogues as $id => $name)
                                                 <option value="{{ $id }}">{{ $name }}</option>
                                             @endforeach
@@ -83,9 +100,10 @@
                                             <div class="col-md-2">
                                                 <div class="form-check form-switch form-switch-{{ $color }}">
                                                     <input class="form-check-input" type="checkbox" role="switch"
-                                                           name="{{ $key }}" value="1" id="{{ $key }}" @if($key == 'is_active') checked @endif>
+                                                           name="{{ $key }}" value="1" id="{{ $key }}"
+                                                           @if($key == 'is_active') checked @endif>
                                                     <label class="form-check-label"
-                                                           for="{{ $key }}">{{ Str::convertCase($key, MB_CASE_TITLE) }}</label>
+                                                           for="{{ $key }}">{{ \Str::convertCase($key, MB_CASE_TITLE) }}</label>
                                                 </div>
                                             </div>
                                         @endforeach

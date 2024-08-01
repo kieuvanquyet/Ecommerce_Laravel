@@ -83,11 +83,30 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link menu-link" href="{{ url('/') }}" data-bs-toggle="collapse" role="button"
+                    <a class="nav-link menu-link" href="{{ url('/') }}"  role="button"
                        aria-expanded="false" aria-controls="sidebarProduct">
                         <i class="ri-layout-3-line"></i>
-                        <span data-key="t-layouts">Website</span>
-
+                        Website
+                        {{-- <a href="{{ url('/') }}" class="nav-link"
+                                   data-key="t-horizontal"></a> --}}
+                    </a>
+                    
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="{{ route('admin.orders.index') }}"  role="button"
+                       aria-expanded="false" aria-controls="sidebarProduct">
+                        <i class="ri-layout-3-line"></i>
+                        Đơn hàng
+                        
+                    </a>
+                    
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="{{ route('admin.promotions.index') }}"  role="button"
+                       aria-expanded="false" aria-controls="sidebarProduct">
+                        <i class="ri-layout-3-line"></i>
+                       Khuyến mãi
+                        
                     </a>
                     
                 </li>

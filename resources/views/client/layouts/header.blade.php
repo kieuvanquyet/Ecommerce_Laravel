@@ -320,25 +320,59 @@
                                     uk-close></a></div>
                         </div>
                     </div>
-                </div><a class="uk-navbar-item uk-link-muted uk-visible@m tm-navbar-button"
-                    href="compare.html"><span uk-icon="copy"></span><span class="uk-badge">3</span></a><a
-                    class="uk-navbar-item uk-link-muted tm-navbar-button" href="account.html"
-                    uk-icon="user"></a>
-                <div class="uk-padding-small uk-margin-remove"
-                    uk-dropdown="pos: bottom-right; offset: -10; delay-hide: 200;" style="min-width: 150px;">
-                    <ul class="uk-nav uk-dropdown-nav">
-                        <li><a href="account.html">Orders
-                                <span>(2)</span></a></li>
-                        <li><a href="favorites.html">Favorites
-                                <span>(3)</span></a></li>
-                        <li><a href="personal.html">Personal</a></li>
-                        <li><a href="settings.html">Settings</a></li>
-                        <li class="uk-nav-divider"></li>
-                        <li><a href="#">Log out</a></li>
-                    </ul>
-                </div><a class="uk-navbar-item uk-link-muted tm-navbar-button" href="cart.html"
-                    uk-toggle="target: #cart-offcanvas" onclick="return false"><span uk-icon="cart"></span><span
-                        class="uk-badge">2</span></a>
+                </div>
+                    <a class="uk-navbar-item uk-link-muted uk-visible@m tm-navbar-button"
+                    href="compare.html">
+                    <span uk-icon="copy"></span>
+                    <span class="uk-badge">3</span>
+                    </a>
+                    <a class="uk-navbar-item uk-link-muted tm-navbar-button" href="account.html" uk-icon="user"></a>
+               
+                    <div class="uk-padding-small uk-margin-remove" uk-dropdown="pos: bottom-right; offset: -10; delay-hide: 200;" style="min-width: 150px;">
+                        <ul class="uk-nav uk-dropdown-nav">
+                            {{-- <li><a href="account.html">Orders
+                                    <span>(2)</span></a></li>
+                            <li><a href="favorites.html">Favorites
+                                    <span>(3)</span></a></li>
+                            <li><a href="personal.html">Personal</a></li>
+                            <li><a href="settings.html">Settings</a></li>
+                            <li class="uk-nav-divider"></li>
+                            <li><a href="#">Log out</a></li> --}}
+                            @guest
+                            @if (Route::has('login'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                </li>
+                            @endif
+
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                </li>
+                            @endif
+                        @else
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }}
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+                        @endguest
+                        
+                        </ul>
+                </div>
+                <a class="uk-navbar-item uk-link-muted tm-navbar-button" href="{{route('cart.list')}}" ><span uk-icon="cart"></span><span class="uk-badge">2</span></a>
             </div>
         </div>
     </div>

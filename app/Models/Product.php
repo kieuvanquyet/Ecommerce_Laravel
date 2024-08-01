@@ -55,4 +55,8 @@ class Product extends Model
     {
         return $this->hasMany(ProductVariant::class);
     }
+    public function promotions()
+    {
+        return $this->belongsToMany(Promotion::class, 'product_promotion');
+    }
 }

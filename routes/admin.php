@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\Admin\CatalogueController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\PromotionController ;
+use App\Http\Controllers\OrderController;
+// use App\Http\Controllers\PromotionController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('admin')
@@ -23,4 +26,12 @@ Route::prefix('admin')
                 Route::get('{id}destroy', [CatalogueController::class, 'destroy'])->name('destroy');
             });
         Route::resource('products', ProductController::class);
+
+        Route::get('orders', [OrderController::class, 'index'])->name('orders.index');
+
+        // Route để cập nhật trạng thái đơn hàng
+        Route::post('orders/{id}/update-status', [OrderController::class, 'updateStatus'])->name('orders.updateStatus');
+
+        // KHUYEN MAI
+        Route::resource('promotions', PromotionController::class);
     });

@@ -66,8 +66,8 @@
                                     @php
                                         $url = $item->img_thumbnail;
 
-                                        if(! Str::contains($url, 'http')) {
-                                            $url = Storage::url($url);
+                                        if(! \Str::contains($url, 'http')) {
+                                            $url = \Illuminate\Support\Facades\Storage::url($url);
                                         }
                                     @endphp
 
@@ -75,7 +75,7 @@
                                 </td>
                                 <td>{{ $item->name }}</td>
                                 <td>{{ $item->sku }}</td>
-                                <td>{{ $item->catalogue->name }}</td>
+                                <td>{{ $item->catalogue?->name }}</td>
                                 <td>{{ $item->price_regular }}</td>
                                 <td>{{ $item->price_sale }}</td>
                                 <td>{{ $item->views }}</td>
@@ -97,6 +97,9 @@
                                 <td>{{ $item->created_at }}</td>
                                 <td>{{ $item->updated_at }}</td>
                                 <td>
+                                    <a href="{{ route('admin.products.edit', $item) }}"
+                                        type="submit" class="btn btn-warning">Edit</a>
+
                                     <form action="{{ route('admin.products.destroy', $item) }}" method="post">
                                         @csrf
                                         @method('DELETE')

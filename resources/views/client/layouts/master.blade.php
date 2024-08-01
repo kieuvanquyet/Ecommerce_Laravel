@@ -12,6 +12,17 @@
     <link rel="stylesheet" href="{{asset('theme/dest/styles/style.css')}}">
     <script src="{{asset('theme/dest/scripts/uikit.js')}}"></script>
     <script src="{{asset('theme/dest/scripts/uikit-icons.js')}}"></script>
+    <style>
+        .fixed-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    /* height: ; */
+    z-index: 1000; /* Đảm bảo rằng phần tử này nằm trên cùng */
+}
+
+    </style>
 </head>
 
 <body>
@@ -21,6 +32,11 @@
 
                 <div class="page-content">
                     <div class="container-fluid">
+                        {{-- @if(session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                    @endif --}}
                         @yield('content')
                     </div>
                     <!-- container-fluid -->
@@ -29,6 +45,7 @@
         </div>
         @include('client.layouts.footer');
     </div>
+    @yield('scripts')
     <script src="{{asset('theme/dest/scripts/script.js')}}"></script>
     <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyClyjCemJi4m2q78gNeGkhlckpdH1hzTYA&amp;callback=initMap"
         async defer></script>

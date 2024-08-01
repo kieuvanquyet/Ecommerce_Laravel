@@ -43,21 +43,22 @@
                                                 class="uk-label uk-label-warning">top selling</span><span
                                                 class="uk-label uk-label-danger">trade-in</span></div>
                                         <figure class="tm-media-box-wrap">
+                                           <img src="{{Storage::url($item->img_thumbnail)}}" alt="">
                                             <img src="{{$item->img_thumbnail}}"
-                                                alt="Apple MacBook Pro 15&quot; Touch Bar MPTU2LL/A 256GB (Silver)" />
+                                                alt="" />
                                         </figure>
                                     </a></div>
                             </div>
                             <div class="tm-product-card-body">
                                 <div class="tm-product-card-info">
-                                    <div class="uk-text-meta uk-margin-xsmall-bottom">Laptop</div>
+                                    <div class="uk-text-meta uk-margin-xsmall-bottom">{{$item->catalogue->name}}</div>
                                     <h3 class="tm-product-card-title"><a class="uk-link-heading"
                                             href="{{route('product.detail', $item->slug)}}">{{$item->name}}</a></h3>
                                   
                                 </div>
                                 <div class="tm-product-card-shop">
-                                    <div class="tm-product-card-prices"><del class="uk-text-meta">{{$item->price_regular}}</del>
-                                        <div class="tm-product-card-price">{{$item->price_sale}}</div>
+                                    <div class="tm-product-card-prices"><del class="uk-text-meta">{{ number_format ($item->price_regular)}}đ</del>
+                                        <div class="tm-product-card-price">{{ number_format ($item->price_sale)}}đ</div>
                                     </div>
                                     <div class="tm-product-card-add">
                                         <div class="uk-text-meta tm-product-card-actions"><a
@@ -103,7 +104,7 @@
                                         <div class="tm-ratio tm-ratio-16-9"><a
                                                 class="uk-link-muted tm-media-box tm-grayscale" href="#"
                                                 title="Apple">
-                                                <figure class="tm-media-box-wrap"><img src="images/brands/apple.svg"
+                                                <figure class="tm-media-box-wrap"><img src="{{asset('theme/dest/images/brands/apple.svg')}}"
                                                         alt="Apple"></figure>
                                             </a></div>
                                     </li>
@@ -112,14 +113,14 @@
                                                 class="uk-link-muted tm-media-box tm-grayscale" href="#"
                                                 title="Samsung">
                                                 <figure class="tm-media-box-wrap"><img
-                                                        src="images/brands/samsung.svg" alt="Samsung"></figure>
+                                                        src="{{asset('theme/dest/images/brands/samsung.svg')}}" alt="Samsung"></figure>
                                             </a></div>
                                     </li>
                                     <li>
                                         <div class="tm-ratio tm-ratio-16-9"><a
                                                 class="uk-link-muted tm-media-box tm-grayscale" href="#"
                                                 title="Sony">
-                                                <figure class="tm-media-box-wrap"><img src="images/brands/sony.svg"
+                                                <figure class="tm-media-box-wrap"><img src="{{asset('theme/dest/images/brands/sony.svg')}}"
                                                         alt="Sony"></figure>
                                             </a></div>
                                     </li>
@@ -128,28 +129,28 @@
                                                 class="uk-link-muted tm-media-box tm-grayscale" href="#"
                                                 title="Microsoft">
                                                 <figure class="tm-media-box-wrap"><img
-                                                        src="images/brands/microsoft.svg" alt="Microsoft"></figure>
+                                                        src="{{asset('theme/dest/images/brands/microsoft.svg')}}" alt="Microsoft"></figure>
                                             </a></div>
                                     </li>
                                     <li>
                                         <div class="tm-ratio tm-ratio-16-9"><a
                                                 class="uk-link-muted tm-media-box tm-grayscale" href="#"
                                                 title="Intel">
-                                                <figure class="tm-media-box-wrap"><img src="images/brands/intel.svg"
+                                                <figure class="tm-media-box-wrap"><img src="{{asset('theme/dest/images/brands/intel.svg')}}"
                                                         alt="Intel"></figure>
                                             </a></div>
                                     </li>
                                     <li>
                                         <div class="tm-ratio tm-ratio-16-9"><a
                                                 class="uk-link-muted tm-media-box tm-grayscale" href="#" title="HP">
-                                                <figure class="tm-media-box-wrap"><img src="images/brands/hp.svg"
+                                                <figure class="tm-media-box-wrap"><img src="{{asset('theme/dest/images/brands/hp.svg')}}"
                                                         alt="HP"></figure>
                                             </a></div>
                                     </li>
                                     <li>
                                         <div class="tm-ratio tm-ratio-16-9"><a
                                                 class="uk-link-muted tm-media-box tm-grayscale" href="#" title="LG">
-                                                <figure class="tm-media-box-wrap"><img src="images/brands/lg.svg"
+                                                <figure class="tm-media-box-wrap"><img src="{{asset('theme/dest/images/brands/lg.svg')}}"
                                                         alt="LG"></figure>
                                             </a></div>
                                     </li>
@@ -158,14 +159,14 @@
                                                 class="uk-link-muted tm-media-box tm-grayscale" href="#"
                                                 title="Lenovo">
                                                 <figure class="tm-media-box-wrap"><img
-                                                        src="images/brands/lenovo.svg" alt="Lenovo"></figure>
+                                                        src="{{asset('theme/dest/images/brands/lenovo.svg')}}" alt="Lenovo"></figure>
                                             </a></div>
                                     </li>
                                     <li>
                                         <div class="tm-ratio tm-ratio-16-9"><a
                                                 class="uk-link-muted tm-media-box tm-grayscale" href="#"
                                                 title="ASUS">
-                                                <figure class="tm-media-box-wrap"><img src="images/brands/asus.svg"
+                                                <figure class="tm-media-box-wrap"><img src="{{asset('theme/dest/images/brands/asus.svg')}}"
                                                         alt="ASUS"></figure>
                                             </a></div>
                                     </li>
@@ -173,7 +174,7 @@
                                         <div class="tm-ratio tm-ratio-16-9"><a
                                                 class="uk-link-muted tm-media-box tm-grayscale" href="#"
                                                 title="Acer">
-                                                <figure class="tm-media-box-wrap"><img src="images/brands/acer.svg"
+                                                <figure class="tm-media-box-wrap"><img src="{{asset('theme/dest/images/brands/acer.svg')}}"
                                                         alt="Acer"></figure>
                                             </a></div>
                                     </li>
@@ -181,7 +182,7 @@
                                         <div class="tm-ratio tm-ratio-16-9"><a
                                                 class="uk-link-muted tm-media-box tm-grayscale" href="#"
                                                 title="Dell">
-                                                <figure class="tm-media-box-wrap"><img src="images/brands/dell.svg"
+                                                <figure class="tm-media-box-wrap"><img src="{{asset('theme/dest/images/brands/dell.svg')}}"
                                                         alt="Dell"></figure>
                                             </a></div>
                                     </li>
@@ -189,7 +190,7 @@
                                         <div class="tm-ratio tm-ratio-16-9"><a
                                                 class="uk-link-muted tm-media-box tm-grayscale" href="#"
                                                 title="Canon">
-                                                <figure class="tm-media-box-wrap"><img src="images/brands/canon.svg"
+                                                <figure class="tm-media-box-wrap"><img src="{{asset('theme/dest/images/brands/canon.svg')}}"
                                                         alt="Canon"></figure>
                                             </a></div>
                                     </li>
@@ -214,7 +215,7 @@
                                 class="uk-card uk-card-default uk-card-small uk-article uk-overflow-hidden uk-box-shadow-hover-large uk-height-1-1 tm-ignore-container">
                                 <div class="tm-ratio tm-ratio-16-9">
                                     <figure class="tm-media-box uk-cover-container uk-margin-remove"><img
-                                            src="images/articles/macbook-photo.jpg"
+                                            src="{{asset('theme/dest/images/articles/macbook-photo.jpg')}}"
                                             alt="Everything You Need to Know About the MacBook Pro"
                                             uk-cover="uk-cover" /></figure>
                                 </div>
@@ -240,7 +241,7 @@
                                 class="uk-card uk-card-default uk-card-small uk-article uk-overflow-hidden uk-box-shadow-hover-large uk-height-1-1 tm-ignore-container">
                                 <div class="tm-ratio tm-ratio-16-9">
                                     <figure class="tm-media-box uk-cover-container uk-margin-remove"><img
-                                            src="images/articles/macos.jpg" alt="Apple introduces macOS Mojave"
+                                            src="{{asset('theme/dest/images/articles/macos.jpg')}}" alt="Apple introduces macOS Mojave"
                                             uk-cover="uk-cover" /></figure>
                                 </div>
                                 <div class="uk-card-body">

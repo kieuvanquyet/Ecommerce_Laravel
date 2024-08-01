@@ -23,6 +23,12 @@ class Order extends Model
         'paid' => 'Đã thanh toán',
     ];
 
+    const PAYMENT_METHODS = [
+        'cash_on_delivery' => 'Thanh toán khi nhận hàng',
+        'credit_card' => 'Thẻ tín dụng',
+        'paypal' => 'PayPal',
+        'bank_transfer' => 'Chuyển khoản ngân hàng',
+    ];
     
     const STATUS_ORDER_PENDING = 'pending';
     const STATUS_ORDER_CONFIRMED = 'confirmed';
@@ -51,4 +57,8 @@ class Order extends Model
         'status_payment',
         'total_price',
     ];
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
