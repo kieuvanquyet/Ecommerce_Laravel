@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\OrderInvoice;
 use App\Models\Cart;
 use App\Models\CartItem;
 use App\Models\Order;
@@ -10,6 +11,7 @@ use App\Models\Promotion; // Đảm bảo đã import Promotion model
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 class OrderController extends Controller
 {
@@ -148,24 +150,26 @@ class OrderController extends Controller
         CartItem::whereIn('id', $selectedItems)->delete();
         Cart::where('user_id', auth()->id())->delete();
 
+        Mail::to($order->user_email)->send(new OrderInvoice($order));
+        
         return redirect()->route('thongbao')->with('success', 'Order placed successfully!');
     }
 
 
 
 
-    public function updateStatus(Request $request, $id)
-    {
-        // Xác thực dữ liệu
-        $validated = $request->validate([
-            'status_order' => 'required|in:' . implode(',', array_keys(Order::STATUS_ORDER)),
-            'status_payment' => 'required|in:' . implode(',', array_keys(Order::STATUS_PAYMENT)),
-        ]);
+    // public function updateStatus(Request $request, $id)
+    // {
+    //     // Xác thực dữ liệu
+    //     $validated = $request->validate([
+    //         'status_order' => 'required|in:' . implode(',', array_keys(Order::STATUS_ORDER)),
+    //         'status_payment' => 'required|in:' . implode(',', array_keys(Order::STATUS_PAYMENT)),
+    //     ]);
 
-        // Cập nhật trạng thái đơn hàng
-        $order = Order::findOrFail($id);
-        $order->update($validated);
+    //     // Cập nhật trạng thái đơn hàng
+    //     $order = Order::findOrFail($id);
+    //     $order->update($validated);
 
-        return redirect()->route('admin.orders.index')->with('success', 'Cập nhật trạng thái đơn hàng thành công.');
-    }
+    //     return redirect()->route('admin.orders.index')->with('success', 'Cập nhật trạng thái đơn hàng thành công.');
+    // }
 }

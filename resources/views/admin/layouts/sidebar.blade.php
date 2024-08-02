@@ -120,6 +120,15 @@
                     
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link menu-link" href="{{ route('admin.invoices.index') }}"  role="button"
+                       aria-expanded="false" aria-controls="sidebarProduct">
+                        <i class="ri-layout-3-line"></i>
+                        Invoices
+                        
+                    </a>
+                    
+                </li>
+                <li class="nav-item">
                     <a class="nav-link menu-link" href="{{ url('/') }}"  role="button"
                        aria-expanded="false" aria-controls="sidebarProduct">
                         <i class="ri-layout-3-line"></i>

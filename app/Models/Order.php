@@ -17,6 +17,17 @@ class Order extends Model
         'delivered' => 'Đã giao hàng',
         'canceled' => 'Đơn hàng đã bị hủy',
     ];
+    public static function validTransitions()
+    {
+        return [
+            'pending' => ['confirmed', 'preparing_goods', 'shipping', 'delivered', 'canceled'],
+            'confirmed' => ['preparing_goods', 'shipping', 'delivered', 'canceled'],
+            'preparing_goods' => ['shipping', 'delivered', 'canceled'],
+            'shipping' => ['delivered', 'canceled'],
+            'delivered' => [],
+            'canceled' => [],
+        ];
+    }
 
     const STATUS_PAYMENT = [
         'unpaid' => 'Chưa thanh toán',
@@ -60,5 +71,10 @@ class Order extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+    
+    public function orderItems()
+    {
+        return $this->hasMany(OrderItem::class);
     }
 }

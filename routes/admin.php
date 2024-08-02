@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\CatalogueController;
+use App\Http\Controllers\Admin\InvoiceController;
+use App\Http\Controllers\Admin\OrderController as AdminOrderController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\PromotionController ;
 use App\Http\Controllers\Admin\UserController;
@@ -30,10 +32,12 @@ Route::prefix('admin')
             });
         Route::resource('products', ProductController::class);
 
-        Route::get('orders', [OrderController::class, 'index'])->name('orders.index');
+        // Route::get('orders', [OrderController::class, 'index'])->name('orders.index');
 
         // Route để cập nhật trạng thái đơn hàng
-        Route::post('orders/{id}/update-status', [OrderController::class, 'updateStatus'])->name('orders.updateStatus');
+        Route::get('orders', [AdminOrderController::class, 'index'])->name('orders.index');
+        Route::get('orders/{id}', [AdminOrderController::class, 'show'])->name('orders.show');
+        Route::post('orders/{id}/update-status', [AdminOrderController::class, 'updateStatus'])->name('orders.updateStatus');
 
         // KHUYEN MAI
         Route::resource('promotions', PromotionController::class);
@@ -42,4 +46,8 @@ Route::prefix('admin')
 
         Route::resource('banners', BannerController::class);
         Route::post('banners/{banner}/activate', [BannerController::class, 'activate'])->name('banners.activate');
+
+        Route::get('invoices', [InvoiceController::class, 'index'])->name('invoices.index');
+        Route::get('invoices/{orderId}', [InvoiceController::class, 'show'])->name('invoices.show');
+        Route::get('invoices/{orderId}/print', [InvoiceController::class, 'print'])->name('invoices.print');
     });
