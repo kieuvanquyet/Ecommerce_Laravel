@@ -105,7 +105,16 @@
                     <a class="nav-link menu-link" href="{{ route('admin.users.index') }}"  role="button"
                        aria-expanded="false" aria-controls="sidebarProduct">
                         <i class="ri-layout-3-line"></i>
-                       User
+                       Users
+                        
+                    </a>
+                    
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="{{ route('admin.banners.index') }}"  role="button"
+                       aria-expanded="false" aria-controls="sidebarProduct">
+                        <i class="ri-layout-3-line"></i>
+                       Banners
                         
                     </a>
                     

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\CatalogueController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\PromotionController ;
@@ -38,4 +39,7 @@ Route::prefix('admin')
         Route::resource('promotions', PromotionController::class);
 
         Route::resource('users', UserController::class);
+
+        Route::resource('banners', BannerController::class);
+        Route::post('banners/{banner}/activate', [BannerController::class, 'activate'])->name('banners.activate');
     });

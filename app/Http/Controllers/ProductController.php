@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Banner;
 use App\Models\Catalogue;
 use App\Models\Product;
 use App\Models\ProductColor;
@@ -20,9 +21,9 @@ class ProductController extends Controller
             ->orderBy('created_at', 'desc')
             ->take(12)
             ->get();
-
-        // Trả về view với dữ liệu sản phẩm
-        return view(self::PATH_VIEW . __FUNCTION__, compact('products'));
+            $activeBanner = Banner::where('is_active', true)->first();
+            // dd($activeBannersCount);
+        return view(self::PATH_VIEW . __FUNCTION__, compact('products','activeBanner'));
     }
 
 

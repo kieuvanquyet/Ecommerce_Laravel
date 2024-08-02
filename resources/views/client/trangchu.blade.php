@@ -6,7 +6,38 @@
         <section class="uk-position-relative uk-visible-toggle uk-light"
             uk-slideshow="min-height: 300; max-height: 600;">
             <ul class="uk-slideshow-items">
-                <li style="background-color: #0b0a12"><a href="#">
+                @if ($activeBanner)
+                    
+                        @if ($activeBanner->banner_image1)
+                            <li style="background-color: #0b0a12">
+                                <a href="#">
+                                    <figure class="uk-container uk-height-1-1">
+                                        <img src="{{ Storage::url( $activeBanner->banner_image1) }}" alt="Banner Image 1" width="1200" height="600" uk-cover>
+                                    </figure>
+                                </a>
+                            </li>
+                        @endif
+                        @if ($activeBanner->banner_image2)
+                            <li style="background-color: #ce071e">
+                                <a href="#">
+                                    <figure class="uk-container uk-height-1-1">
+                                        <img src="{{ Storage::url( $activeBanner->banner_image2) }}" alt="Banner Image 2"  width="1200" height="600" uk-cover>
+                                    </figure>
+                                </a>
+                            </li>
+                        @endif
+                        @if ($activeBanner->banner_image3)
+                            <li style="background-color: #1f2024">
+                                <a href="#">
+                                    <figure class="uk-container uk-height-1-1">
+                                        <img src="{{ Storage::url( $activeBanner->banner_image3) }}" alt="Banner Image 3"  width="1200" height="600" uk-cover>
+                                    </figure>
+                                </a>
+                            </li>
+                        @endif
+                    
+                @endif
+                {{-- <li style="background-color: #0b0a12"><a href="#">
                         <figure class="uk-container uk-height-1-1"><img src="{{asset('theme/dest/images/bn01.webp')}}"
                                 alt="New Macbook" width="1200" height="600" uk-cover></figure>
                     </a></li>
@@ -17,11 +48,11 @@
                 <li style="background-color: #1f2024"><a href="#">
                         <figure class="uk-container uk-height-1-1"><img src="{{asset('theme/dest/images/bn01.webp')}}" alt="iPad"
                                 width="1200" height="600" uk-cover></figure>
-                    </a></li>
-            </ul><a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#"
-                uk-slideshow-item="previous" uk-slidenav-previous></a><a
-                class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slideshow-item="next"
-                uk-slidenav-next></a>
+                    </a></li> --}}
+            </ul>
+            <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slideshow-item="previous" uk-slidenav-previous style="color: #0b0a12"></a>
+            <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slideshow-item="next" uk-slidenav-next style="color: #0b0a12"></a>
+            
             <div class="uk-position-bottom-center uk-position-small">
                 <ul class="uk-slideshow-nav uk-dotnav"></ul>
             </div>
