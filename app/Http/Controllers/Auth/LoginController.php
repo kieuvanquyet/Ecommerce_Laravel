@@ -1,12 +1,13 @@
 <?php
 
 namespace App\Http\Controllers\Auth;
-
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller
 {
+    use AuthenticatesUsers;
     /*
     |--------------------------------------------------------------------------
     | Login Controller
@@ -19,7 +20,14 @@ class LoginController extends Controller
     */
 
     use AuthenticatesUsers;
-
+    protected function authenticated(Request $request, $user)
+    {
+        if ($user->isAdmin()) {
+            return redirect()->route('admin.dashboard');
+        } else {
+            return redirect()->route('/');
+        }
+    }
     /**
      * Where to redirect users after login.
      *
@@ -37,4 +45,6 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
         $this->middleware('auth')->only('logout');
     }
+
+   
 }

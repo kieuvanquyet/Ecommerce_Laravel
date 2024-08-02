@@ -154,7 +154,7 @@
                                 </div>
                             </div>
                         </li>
-                        <li><a href="brands.html">Brands<span class="uk-margin-xsmall-left"
+                        <li><a href="{{asset('theme/dest/brands.html')}}">Brands<span class="uk-margin-xsmall-left"
                                     uk-icon="icon: chevron-down; ratio: .75;"></span></a>
                             <div class="uk-navbar-dropdown uk-margin-remove uk-padding-remove-vertical"
                                 uk-drop="pos: bottom-justify;delay-show: 125;delay-hide: 50;duration: 75;boundary: .tm-navbar-container;boundary-align: true;pos: bottom-justify;flip: x">
@@ -165,7 +165,7 @@
                                                     class="uk-link-muted uk-text-center uk-display-block uk-padding-small uk-box-shadow-hover-large tm-media-box"
                                                     href="#" title="Apple">
                                                     <figure class="tm-media-box-wrap"><img
-                                                            src="images/brands/apple.svg" alt="Apple"></figure>
+                                                            src="{{asset('theme/dest/images/brands/apple.svg')}}" alt="Apple"></figure>
                                                 </a></div>
                                         </li>
                                         <li>
@@ -173,7 +173,7 @@
                                                     class="uk-link-muted uk-text-center uk-display-block uk-padding-small uk-box-shadow-hover-large tm-media-box"
                                                     href="#" title="Samsung">
                                                     <figure class="tm-media-box-wrap"><img
-                                                            src="images/brands/samsung.svg" alt="Samsung">
+                                                            src="{{asset('theme/dest/images/brands/samsung.svg')}}" alt="Samsung">
                                                     </figure>
                                                 </a></div>
                                         </li>
@@ -182,7 +182,7 @@
                                                     class="uk-link-muted uk-text-center uk-display-block uk-padding-small uk-box-shadow-hover-large tm-media-box"
                                                     href="#" title="Sony">
                                                     <figure class="tm-media-box-wrap"><img
-                                                            src="images/brands/sony.svg" alt="Sony"></figure>
+                                                            src="{{asset('theme/dest/images/brands/sony.svg')}}" alt="Sony"></figure>
                                                 </a></div>
                                         </li>
                                         <li>
@@ -190,7 +190,7 @@
                                                     class="uk-link-muted uk-text-center uk-display-block uk-padding-small uk-box-shadow-hover-large tm-media-box"
                                                     href="#" title="Microsoft">
                                                     <figure class="tm-media-box-wrap"><img
-                                                            src="images/brands/microsoft.svg" alt="Microsoft">
+                                                            src="{{asset('theme/dest/images/brands/microsoft.svg')}}" alt="Microsoft">
                                                     </figure>
                                                 </a></div>
                                         </li>
@@ -199,7 +199,7 @@
                                                     class="uk-link-muted uk-text-center uk-display-block uk-padding-small uk-box-shadow-hover-large tm-media-box"
                                                     href="#" title="Intel">
                                                     <figure class="tm-media-box-wrap"><img
-                                                            src="images/brands/intel.svg" alt="Intel"></figure>
+                                                            src="{{asset('theme/dest/images/brands/intel.svg')}}" alt="Intel"></figure>
                                                 </a></div>
                                         </li>
                                         <li>
@@ -207,7 +207,7 @@
                                                     class="uk-link-muted uk-text-center uk-display-block uk-padding-small uk-box-shadow-hover-large tm-media-box"
                                                     href="#" title="HP">
                                                     <figure class="tm-media-box-wrap"><img
-                                                            src="images/brands/hp.svg" alt="HP"></figure>
+                                                            src="{{asset('theme/dest/')}}images/brands/hp.svg" alt="HP"></figure>
                                                 </a></div>
                                         </li>
                                         <li>
@@ -215,7 +215,7 @@
                                                     class="uk-link-muted uk-text-center uk-display-block uk-padding-small uk-box-shadow-hover-large tm-media-box"
                                                     href="#" title="LG">
                                                     <figure class="tm-media-box-wrap"><img
-                                                            src="images/brands/lg.svg" alt="LG"></figure>
+                                                            src="{{asset('theme/dest/')}}images/brands/lg.svg" alt="LG"></figure>
                                                 </a></div>
                                         </li>
                                         <li>
@@ -223,7 +223,7 @@
                                                     class="uk-link-muted uk-text-center uk-display-block uk-padding-small uk-box-shadow-hover-large tm-media-box"
                                                     href="#" title="Lenovo">
                                                     <figure class="tm-media-box-wrap"><img
-                                                            src="images/brands/lenovo.svg" alt="Lenovo">
+                                                            src="{{asset('theme/dest/images/brands/lenovo.svg')}}" alt="Lenovo">
                                                     </figure>
                                                 </a></div>
                                         </li>
@@ -232,7 +232,7 @@
                                                     class="uk-link-muted uk-text-center uk-display-block uk-padding-small uk-box-shadow-hover-large tm-media-box"
                                                     href="#" title="ASUS">
                                                     <figure class="tm-media-box-wrap"><img
-                                                            src="images/brands/asus.svg" alt="ASUS"></figure>
+                                                            src="{{asset('theme/dest/images/brands/asus.svg')}}" alt="ASUS"></figure>
                                                 </a></div>
                                         </li>
                                         <li>
@@ -240,7 +240,7 @@
                                                     class="uk-link-muted uk-text-center uk-display-block uk-padding-small uk-box-shadow-hover-large tm-media-box"
                                                     href="#" title="Acer">
                                                     <figure class="tm-media-box-wrap"><img
-                                                            src="images/brands/acer.svg" alt="Acer"></figure>
+                                                            src="{{asset('theme/dest/images/brands/acer.svg')}}" alt="Acer"></figure>
                                                 </a></div>
                                         </li>
                                         <li>
@@ -248,7 +248,7 @@
                                                     class="uk-link-muted uk-text-center uk-display-block uk-padding-small uk-box-shadow-hover-large tm-media-box"
                                                     href="#" title="Dell">
                                                     <figure class="tm-media-box-wrap"><img
-                                                            src="images/brands/dell.svg" alt="Dell"></figure>
+                                                            src="{{asset('theme/dest/images/brands/dell.svg')}}" alt="Dell"></figure>
                                                 </a></div>
                                         </li>
                                         <li>
@@ -256,7 +256,7 @@
                                                     class="uk-link-muted uk-text-center uk-display-block uk-padding-small uk-box-shadow-hover-large tm-media-box"
                                                     href="#" title="Canon">
                                                     <figure class="tm-media-box-wrap"><img
-                                                            src="images/brands/canon.svg" alt="Canon"></figure>
+                                                            src="{{asset('theme/dest/images/brands/canon.svg')}}" alt="Canon"></figure>
                                                 </a></div>
                                         </li>
                                     </ul>
@@ -267,7 +267,7 @@
                                 </div>
                             </div>
                         </li>
-                        <li><a href="#">Pages<span class="uk-margin-xsmall-left"
+                        {{-- <li><a href="#">Pages<span class="uk-margin-xsmall-left"
                                     uk-icon="icon: chevron-down; ratio: .75;"></span></a>
                             <div class="uk-navbar-dropdown uk-margin-remove uk-padding-remove-vertical"
                                 uk-drop="pos: bottom-justify;delay-show: 125;delay-hide: 50;duration: 75;boundary: .tm-navbar-container;boundary-align: true;pos: bottom-justify;flip: x">
@@ -297,11 +297,11 @@
                                     </ul>
                                 </div>
                             </div>
-                        </li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="contacts.html">Contacts</a></li>
-                        <li><a href="{{route('admin.catalogues.index')}}">Website Admin</a></li>
+                        </li> --}}
+                        <li><a href="{{asset('theme/dest/blog.html')}}">Blog</a></li>
+                        <li><a href="{{asset('theme/dest/about.html')}}">About</a></li>
+                        <li><a href="{{asset('theme/dest/contacts.html')}}">Contacts</a></li>
+                        
                     </ul>
                 </nav>
             </div>
@@ -330,47 +330,46 @@
                
                     <div class="uk-padding-small uk-margin-remove" uk-dropdown="pos: bottom-right; offset: -10; delay-hide: 200;" style="min-width: 150px;">
                         <ul class="uk-nav uk-dropdown-nav">
-                            {{-- <li><a href="account.html">Orders
-                                    <span>(2)</span></a></li>
-                            <li><a href="favorites.html">Favorites
-                                    <span>(3)</span></a></li>
-                            <li><a href="personal.html">Personal</a></li>
-                            <li><a href="settings.html">Settings</a></li>
-                            <li class="uk-nav-divider"></li>
-                            <li><a href="#">Log out</a></li> --}}
                             @guest
-                            @if (Route::has('login'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                </li>
-                            @endif
-
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
+                                @if (Route::has('login'))
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    </li>
+                                @endif
                         
+                                @if (Route::has('register'))
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    </li>
+                                @endif
+                            @else
+                                <li class="nav-item dropdown">
+                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        {{ Auth::user()->name }}
+                                    </a>
+                        
+                                    <div class="">
+                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                           onclick="event.preventDefault();
+                                                         document.getElementById('logout-form').submit();">
+                                            {{ __('Logout') }}
+                                        </a>
+    
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                            @csrf
+                                        </form>
+                                    </div>
+                        
+                                        <!-- Nút Website Admin chỉ hiển thị nếu là admin -->
+                                        @if (Auth::user()->isAdmin())
+                                            <a class="dropdown-item" href="{{ route('admin.dashboard') }}">Website Admin</a>
+                                        @endif
+                                    
+                                </li>
+                            @endguest
                         </ul>
+                        
+                        
                 </div>
                 <a class="uk-navbar-item uk-link-muted tm-navbar-button" href="{{route('cart.list')}}" ><span uk-icon="cart"></span><span class="uk-badge">2</span></a>
             </div>

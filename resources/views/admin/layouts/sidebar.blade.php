@@ -82,16 +82,7 @@
                         </ul>
                     </div>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link menu-link" href="{{ url('/') }}"  role="button"
-                       aria-expanded="false" aria-controls="sidebarProduct">
-                        <i class="ri-layout-3-line"></i>
-                        Website
-                        {{-- <a href="{{ url('/') }}" class="nav-link"
-                                   data-key="t-horizontal"></a> --}}
-                    </a>
-                    
-                </li>
+               
                 <li class="nav-item">
                     <a class="nav-link menu-link" href="{{ route('admin.orders.index') }}"  role="button"
                        aria-expanded="false" aria-controls="sidebarProduct">
@@ -107,6 +98,25 @@
                         <i class="ri-layout-3-line"></i>
                        Khuyến mãi
                         
+                    </a>
+                    
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="{{ route('admin.users.index') }}"  role="button"
+                       aria-expanded="false" aria-controls="sidebarProduct">
+                        <i class="ri-layout-3-line"></i>
+                       User
+                        
+                    </a>
+                    
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="{{ url('/') }}"  role="button"
+                       aria-expanded="false" aria-controls="sidebarProduct">
+                        <i class="ri-layout-3-line"></i>
+                        Website
+                        {{-- <a href="{{ url('/') }}" class="nav-link"
+                                   data-key="t-horizontal"></a> --}}
                     </a>
                     
                 </li>

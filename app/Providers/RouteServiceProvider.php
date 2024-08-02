@@ -40,4 +40,14 @@ class RouteServiceProvider extends ServiceProvider
                 ->group(base_path('routes/admin.php'));
         });
     }
+
+    protected function authenticated(Request $request, $user)
+{
+    if ($user->isAdmin()) {
+        return redirect()->route('admin.dashboard');
+    } else {
+        return redirect()->route('/');
+    }
+}
+
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Catalogue;
 use App\Models\Product;
 use App\Models\ProductColor;
 use App\Models\ProductSize;
@@ -24,11 +25,6 @@ class ProductController extends Controller
         return view(self::PATH_VIEW . __FUNCTION__, compact('products'));
     }
 
-    // public function welcome()
-    // {
-    //     $products = Product::with('catalogue')->get();
-    //     return view(self::PATH_VIEW . __FUNCTION__, compact('products'));
-    // }
 
     public function detail($slug)
     {
@@ -40,6 +36,18 @@ class ProductController extends Controller
         return view('client.product-detail', compact('product', 'colors', 'sizes', 'galleryImages'));
     }
 
+    public function index(Request $request)
+    {
+        $query = Product::query()->with('catalogue');
 
+        if ($request->has('catalogue_id')) {
+            $query->where('catalogue_id', $request->input('catalogue_id'));
+        }
+
+        $products = $query->paginate(12);
+        $catalogues = Catalogue::all();
+
+        return view(self::PATH_VIEW . 'index', compact('products', 'catalogues'));
+    }
    
 }

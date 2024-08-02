@@ -8,6 +8,7 @@
     <title>@yield('title')</title>
     @yield('styles')
     @yield('style-libs')
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('theme/dest//fonts.googleapis.com/css?family=Roboto:400,500')}}">
     <link rel="stylesheet" href="{{asset('theme/dest/styles/style.css')}}">
     <script src="{{asset('theme/dest/scripts/uikit.js')}}"></script>
@@ -47,6 +48,7 @@
     </div>
     @yield('scripts')
     <script src="{{asset('theme/dest/scripts/script.js')}}"></script>
+   
     <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyClyjCemJi4m2q78gNeGkhlckpdH1hzTYA&amp;callback=initMap"
         async defer></script>
 </body>

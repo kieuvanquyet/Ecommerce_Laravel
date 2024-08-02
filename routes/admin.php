@@ -3,12 +3,14 @@
 use App\Http\Controllers\Admin\CatalogueController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\PromotionController ;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\OrderController;
 // use App\Http\Controllers\PromotionController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('admin')
     ->as('admin.')
+    ->middleware(['auth', 'checkUserType'])
     ->group(function () {
         Route::get('/', function () {
             return view('admin.dashboard');
@@ -34,4 +36,6 @@ Route::prefix('admin')
 
         // KHUYEN MAI
         Route::resource('promotions', PromotionController::class);
+
+        Route::resource('users', UserController::class);
     });
