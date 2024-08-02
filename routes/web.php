@@ -1,10 +1,12 @@
 <?php
 
 use App\Http\Controllers\Admin\CatalogueController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CatalogueController as ControllersCatalogueController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\UserController as ControllersUserController;
 use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -43,6 +45,10 @@ Route::post('cart/add', [CartController::class, 'add'])->name('cart.add');
 Route::get('checkout/{order}', [OrderController::class, 'showCheckout'])->name('checkout');
 Route::post('order/save', [OrderController::class, 'save'])->name('order.save');
 Route::post('order/store', [OrderController::class, 'store'])->name('order.store');
+
+Route::get('user/profile', [UserController::class, 'showProfile'])->name('user.profile');
+Route::get('user/orders/{id}', [UserController::class, 'showOrder'])->name('user.order-detail');
+Route::post('user/orders/{id}/cancel', [UserController::class, 'cancelOrder'])->name('user.cancel-order');
 
 // LOGIN
 Auth::routes();

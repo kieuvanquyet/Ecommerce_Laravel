@@ -326,7 +326,7 @@
                     <span uk-icon="copy"></span>
                     <span class="uk-badge">3</span>
                     </a>
-                    <a class="uk-navbar-item uk-link-muted tm-navbar-button" href="account.html" uk-icon="user"></a>
+                    <a class="uk-navbar-item uk-link-muted tm-navbar-button" href="{{route('user.profile')}}" uk-icon="user"></a>
                
                     <div class="uk-padding-small uk-margin-remove" uk-dropdown="pos: bottom-right; offset: -10; delay-hide: 200;" style="min-width: 150px;">
                         <ul class="uk-nav uk-dropdown-nav">
