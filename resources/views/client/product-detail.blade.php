@@ -75,20 +75,18 @@
                                                                 <div class="uk-position-relative">
                                                                     <div class="uk-slider-container">
                                                                         <ul class="tm-slider-items uk-slider-items uk-child-width-1-4 uk-grid uk-grid-small">
-                                                                            <li uk-slideshow-item="0">
-                                                                                <div class="tm-ratio tm-ratio-1-1">
-                                                                                    <a class="tm-media-box tm-media-box-frame">
-                                                                                        <figure class="tm-media-box-wrap">
-                                                                                            {{-- <img src="{{Storage::url($product->image)}}" alt=""> --}}
-                                                                                            @foreach($galleryImages as $galleryImage)
-                                                                                            <img src="{{ Storage::url($galleryImage) }}" alt="">
-                                                                                            @endforeach
-                                                                                            {{-- <img src="images/products/1/1-small.jpg"
-                                                                                                alt="Apple MacBook Pro 15&quot; Touch Bar MPTU2LL/A 256GB (Silver)"> --}}
-                                                                                        </figure>
-                                                                                    </a></div>
-                                                                            </li>
-                                                                            <li uk-slideshow-item="1">
+                                                                            @foreach($galleryImages as $i => $galleryImage)
+                                                                                <li uk-slideshow-item="{{ $i }}">
+                                                                                    <div class="tm-ratio tm-ratio-1-1">
+                                                                                        <a class="tm-media-box tm-media-box-frame">
+                                                                                            <figure class="tm-media-box-wrap">
+                                                                                                <img src="{{ Storage::url($galleryImage) }}" alt="">
+                                                                                            </figure>
+                                                                                        </a>
+                                                                                    </div>
+                                                                                </li>
+                                                                            @endforeach
+                                                                            {{-- <li uk-slideshow-item="1">
                                                                                 <div class="tm-ratio tm-ratio-1-1">
                                                                                     <a class="tm-media-box tm-media-box-frame"
                                                                                         href="#">
@@ -131,7 +129,7 @@
                                                                                                 alt="Apple MacBook Pro 15&quot; Touch Bar MPTU2LL/A 256GB (Silver)">
                                                                                         </figure>
                                                                                     </a></div>
-                                                                            </li>
+                                                                            </li> --}}
                                                                         </ul>
                                                                        
                                                                         <div><a class="uk-position-center-left-out uk-position-small"
@@ -200,7 +198,7 @@
                                                                 <li>
                                                                     <div class="form-check">
                                                                         <input type="radio" 
-                                                                            id="radio_color_{{ $id }}" name="product_color_id" value="{{ $id }}">
+                                                                            id="radio_color_{{ $id }}" name="product_color_id" value="{{ $id }}" checked>
                                                                             <div class="" style="width:50px; height:20px; background:{{ $name }};" for="radio_color_{{ $id }}"></div>
                                                                         {{-- <label class="form-check-label" style="width:50px; height:20px background:{{ $name }};" for="radio_color_{{ $id }}"></label> --}}
                                                                     </div>
@@ -218,7 +216,7 @@
                                                                 <li>
                                                                     <div class="form-check">
                                                                         <input type="radio" class="form-check-input"
-                                                                            id="radio_size_{{ $id }}" name="product_size_id" value="{{ $id }}">
+                                                                            id="radio_size_{{ $id }}" name="product_size_id" value="{{ $id }}" checked>
                                                                         <label class="form-check-label" for="radio_size_{{ $id }}">{{ $name }}</label>
                                                                     </div>
                                                                 </li>
@@ -239,7 +237,7 @@
                                                             <div>
                                                                 <div class="uk-grid-small" uk-grid>
                                                                     <div>
-                                                                        <input style="width: 40px" type="number" class="form-control"
+                                                                        <input style="width: 50px !important" type="number" class="form-control"
                                                                         min="1" required value="1" required  value="1"
                                                                         id="quantity" placeholder="Enter quantity" name="quantity">
                                                                         {{-- <a onclick="increment(-1, 'product-1')"

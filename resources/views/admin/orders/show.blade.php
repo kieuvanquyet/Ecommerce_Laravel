@@ -16,8 +16,9 @@
             <ul class="list-group">
                 @foreach($order->orderItems as $item)
                     <li class="list-group-item">
-                        {{ $item->product_name }} - {{ number_format($item->product_price_sale, 0, ',', '.') }} đ x {{ $item->quatity }}
+                        {{ $item->product_name }} - <b>{{ number_format($item->product_price_sale, 0, ',', '.') }}</b>đ x {{ $item->quatity }}
                     </li>
+                    {{-- <img src="{{Storage::url($item->img_thumbnail)}}" alt=""> --}}
                 @endforeach
             </ul>
 

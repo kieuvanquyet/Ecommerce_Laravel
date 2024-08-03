@@ -71,7 +71,7 @@ class CartController extends Controller
     }
 
 
-    // Hàm để hiển thị giỏ hàng
+    // hiển thị giỏ hàng
     public function list()
     {
         $user = Auth::user();

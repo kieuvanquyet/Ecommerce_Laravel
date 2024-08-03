@@ -17,6 +17,7 @@ class OrderController extends Controller
     public function show($id)
     {
         $order = Order::with('orderItems')->findOrFail($id);
+        // dd($order->all());
         return view('admin.orders.show', compact('order'));
     }
 

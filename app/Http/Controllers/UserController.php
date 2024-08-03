@@ -9,6 +9,12 @@ use App\Models\Order;
 
 class UserController extends Controller
 {
+    public function __construct()
+    {
+        //P
+        $this->middleware('auth');
+    }
+
     public function showProfile()
     {
         $user = Auth::user();

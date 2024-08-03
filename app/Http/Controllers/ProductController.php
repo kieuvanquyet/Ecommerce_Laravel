@@ -18,11 +18,11 @@ class ProductController extends Controller
         // Lấy 10 sản phẩm mới nhất cùng với tên danh mục của chúng
         $products = Product::with('catalogue')
             ->where('is_active', 1)
-            ->orderBy('created_at', 'desc')
+            ->orderBy('id', 'desc')
             ->take(12)
             ->get();
             $activeBanner = Banner::where('is_active', true)->first();
-            // dd($activeBannersCount);
+            // dd($products);
         return view(self::PATH_VIEW . __FUNCTION__, compact('products','activeBanner'));
     }
 
